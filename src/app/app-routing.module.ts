@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: './modules/auth/auth.module#AuthModule'
+  },
+  {
+    path: 'products',
+    loadChildren: './modules/product/product.module#ProductModule'
   }
 ];
 
