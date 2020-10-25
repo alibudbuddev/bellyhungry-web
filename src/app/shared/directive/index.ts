@@ -1,0 +1,1 @@
+export { DynamicWidthDirectiveModule } from './dynamic-width/dynamic-width-directive.module';
