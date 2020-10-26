@@ -12,4 +12,8 @@ export default class FeedService {
   products():Observable<any> {
     return this.httpClient.get<any>(`${this.endpoint}/products`);
   }
+
+  getProduct(productId: string):Observable<any> {
+    return this.httpClient.get<any>(`${this.endpoint}/products/${productId}`);
+  }
 }
