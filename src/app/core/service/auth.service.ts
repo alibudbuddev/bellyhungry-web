@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { environment } from '@environment/environment'
 
 @Injectable({
@@ -12,17 +13,18 @@ export class AuthService {
   
   constructor(private httpClient: HttpClient) { }
 
-  me():Observable<any> {
-    return this.httpClient.get<any>(`${this.endpoint}/me`);
-  }
-
   signUp(user: any):Observable<any> {
     let userObj = {user: user};
     return this.httpClient.post<any>(`${this.endpoint}`, userObj);
   }
 
   signIn(user: any):Observable<any> {
-    return this.httpClient.post<any>(`${this.endpoint}/login`, user);
+    return this.httpClient.post<any>(`${this.endpoint}/login`, user).pipe(
+      map(response => {
+        localStorage.setItem('access_token', response.access_token);
+        return response.user;
+      })
+    );
   }
 
   signOut():Observable<boolean> {
