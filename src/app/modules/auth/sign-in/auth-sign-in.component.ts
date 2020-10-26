@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '@core/service/auth.service';
 
@@ -12,7 +13,8 @@ export class AuthSignInComponent implements OnInit {
 
   constructor(
   	private fb: FormBuilder,
-  	private authService: AuthService
+  	private authService: AuthService,
+    private router: Router
   ) {
   	this.initiateForm();
   }
@@ -50,7 +52,8 @@ export class AuthSignInComponent implements OnInit {
   signIn(): void {
       this.authService.signIn(this.form.value).subscribe(
         user => {
-          
+          this.authService.user = user;
+          this.router.navigate(['/products']);
         }, 
         err => {
           
