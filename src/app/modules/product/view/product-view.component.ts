@@ -28,4 +28,8 @@ export class ProductViewComponent implements OnInit {
   		});
   }
 
+  addToCart(isBuyNow: boolean = false): void {
+    
+  }
+
 }
