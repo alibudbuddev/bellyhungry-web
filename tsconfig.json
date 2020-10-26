@@ -19,6 +19,7 @@
       "dom"
     ],
     "paths": {
+      "@environment/*": ["environments/*"],
       "@core/*": ["app/core/*"],
       "@mock/*": ["app/mock/*"],
       "@modules/*": ["app/modules/*"],
