@@ -29,6 +29,7 @@ export class AppInitializer {
           callback();
         },
         error => {
+          this.authService.user = false;
           callback();
         }
       );

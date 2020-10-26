@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '@shared/class/user.class';
-import users from '@mock/users';
+import { AuthService } from '@core/service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,8 @@ import users from '@mock/users';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit {
-  title = 'angular';
-  private users: User[];
+  
+  constructor(private authService: AuthService) {}
 
-  ngOnInit() {
-  	this.users = users.map(user => new User(user));
-  }
+  ngOnInit() {}
 }
