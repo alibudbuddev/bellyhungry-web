@@ -162,6 +162,14 @@ const addFacebookOGTag = (tagValue: {title: string, url: string, appId?: string,
   }
 }
 
+const trackByIndex = (index) => {
+  return index;
+}
+
+const trackById = (index, item) => {
+  return item._id;
+}
+
 export {
   isResponsive,
   identifyDevice,
@@ -173,5 +181,7 @@ export {
   loadGoogleAnalytics,
   capitalizeString,
   isMobile,
-  addFacebookOGTag
+  addFacebookOGTag,
+  trackByIndex,
+  trackById
 };
