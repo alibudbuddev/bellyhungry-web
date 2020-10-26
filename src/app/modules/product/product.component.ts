@@ -1,28 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import FeedService from '@shared/service/feed.service';
-import { trackById } from '@shared/util/helpers';
-
+import { Component,  } from '@angular/core';
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.less'],
-  providers: [FeedService]
+  template: `<router-outlet></router-outlet>`
 })
-export class ProductComponent implements OnInit {
-	public trackById = trackById;
-	public products: any[] = [];
-
-  constructor(private feedService: FeedService) { }
-
-  ngOnInit() {
-  	this.getProducts();
-  }
-
-  getProducts(): void {
-  	this.feedService.products()
-  		.subscribe(products => {
-  			this.products = products;
-  		});
-  }
-
-}
+export class ProductComponent {}
