@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 	private endpoint = '/auth';
+	public user: undefined | object;
   
   constructor(private httpClient: HttpClient) { }
 
