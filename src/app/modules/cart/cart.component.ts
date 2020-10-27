@@ -9,11 +9,18 @@ import CartService from '@shared/service/cart.service';
 export class CartComponent implements OnInit {
 	public items: any[] = [];
 
-  constructor(private cartService: CartService) {
-  	this.items = cartService.cart.getItems();
-  }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
+  	this.items = this.cartService.cart.getItems();
+  }
+
+  onRemoveItemClick(index: number): void {
+  	this.cartService.removeItem(index);
+  }
+
+  trackByProduct(index, item) {
+  	return item.product;
   }
 
 }

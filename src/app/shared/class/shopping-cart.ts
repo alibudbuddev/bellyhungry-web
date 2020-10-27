@@ -47,8 +47,8 @@ export default class ShoppingCart {
 	}
 
 	removeItem(index: number): void {
-		this.items.slice(index, 1);
-		this.calculate();
+		this.items.splice(index, 1);
+		this.calculate(this.items);
 	}
 
 	private calculate(items: any[] = []): any {
