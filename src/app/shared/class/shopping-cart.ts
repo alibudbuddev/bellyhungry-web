@@ -1,4 +1,4 @@
-import { findIndex, updateWith } from 'lodash';
+import { findIndex, sumBy } from 'lodash';
 
 interface ItemInterface {
 	product: string;
@@ -11,6 +11,7 @@ interface ItemInterface {
 export default class ShoppingCart {
 	private items: ItemInterface[] = [];
 	private totalPrice: number = 0;
+	private totalItems: number = 0;
 
 	constructor(items: any[] = []) {
 		if (items.length > 0) {
@@ -63,7 +64,10 @@ export default class ShoppingCart {
 		let totalPrice = 0;
 		this.items.forEach(data => {
 			totalPrice += data.totalPrice;
+			this.totalItems += data.qty;
 		});
+
+		this.totalItems = sumBy(this.items, 'qty');
 		this.totalPrice = totalPrice;
 	}
 }
