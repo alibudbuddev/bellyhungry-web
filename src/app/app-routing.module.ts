@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'cart',
     loadChildren: './modules/cart/cart.module#CartModule'
+  },
+  {
+    path: 'checkout',
+    loadChildren: './modules/checkout/checkout.module#CheckoutModule'
   }
 ];
 
