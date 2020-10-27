@@ -1,6 +1,6 @@
 import { findIndex, sumBy } from 'lodash';
 
-interface ItemInterface {
+export interface ItemInterface {
 	product: string;
 	productDetails: any;
 	merchant: string;
@@ -9,10 +9,26 @@ interface ItemInterface {
 	qty: number;
 }
 
+export class DeliveryDetails {
+	name: string;
+  shippingAddress: string;
+  contactNo: string;
+  facebookName?: string
+  contactEmail?: string
+  other?: string
+
+  constructor() {
+  	this.name = '';
+		this.shippingAddress = '';
+		this.contactNo = '';
+  }
+}
+
 export default class ShoppingCart {
 	private items: ItemInterface[] = [];
 	private totalPrice: number = 0;
 	private totalItems: number = 0;
+	private deliveryDetails: DeliveryDetailsInterface = new DeliveryDetails();
 
 	constructor(items: any[] = []) {
 		if (items.length > 0) {
