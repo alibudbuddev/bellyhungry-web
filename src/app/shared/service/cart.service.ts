@@ -26,6 +26,11 @@ export default class CartService {
 		this.updatView();
 	}
 
+	updateItem(item: any): void {
+		this.cart.updateItem(item);
+		this.updatView();
+	}
+
 	updatView(): void {
 		localStorage.setItem('cartHistory', JSON.stringify(this.cart));
 		this.cartChangeSource.next(this.cart);

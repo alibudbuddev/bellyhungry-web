@@ -4,7 +4,7 @@ import { NumberInputMaskDirective } from './number-input-mask.directive';
 
 @NgModule({
   declarations: [NumberInputMaskDirective],
-  imports: [CommonModule ],
-  exports: [CommonModule]
+  imports: [CommonModule],
+  exports: [CommonModule, NumberInputMaskDirective]
 })
 export class NumberInputMaskModule { }

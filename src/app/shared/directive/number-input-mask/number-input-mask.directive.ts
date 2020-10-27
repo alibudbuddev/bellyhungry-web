@@ -1,7 +1,7 @@
 import { Directive, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appNumberInputMask]'
+  selector: '[numberInputMask]'
 })
 export class NumberInputMaskDirective {
 

@@ -29,6 +29,14 @@ export default class ShoppingCart {
 		return this.items;
 	}
 
+	updateItem(item: ItemInterface): void {
+		const currentItemIndex: any = findIndex(this.items, {product: item.product});
+		if (currentItemIndex >= 0) {
+			this.items[currentItemIndex] = item;
+			this.calculate(this.items);
+		}
+	}
+
 	addItem(item: ItemInterface): void {
 		if (!item.hasOwnProperty('totalPrice')) {
 			item.totalPrice = 0;

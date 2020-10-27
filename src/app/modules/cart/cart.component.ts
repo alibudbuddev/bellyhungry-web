@@ -26,6 +26,13 @@ export class CartComponent implements OnInit, OnDestroy {
   	this.cartService.removeItem(index);
   }
 
+  onQtyChange(item: any, index: number): void {
+  	if (parseInt(item.qty)) {
+  		item.qty = parseInt(item.qty);
+      this.cartService.updateItem(item);
+  	}
+  }
+
   trackByProduct(index, item) {
   	return item.product;
   }
