@@ -36,6 +36,7 @@ export class ProductViewComponent implements OnInit {
   addToCart(isBuyNow: boolean = false): void {
     const item = {
       product: this.product._id,
+      productDetails: this.product,
       merchant: this.product.merchant,
       price: this.product.price,
       qty: 1

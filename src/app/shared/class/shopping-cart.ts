@@ -2,6 +2,7 @@ import { findIndex, sumBy } from 'lodash';
 
 interface ItemInterface {
 	product: string;
+	productDetails: any;
 	merchant: string;
 	price: string;
 	totalPrice?: number;
