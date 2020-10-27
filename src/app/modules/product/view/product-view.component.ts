@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import FeedService from '@shared/service/feed.service';
 import CartService from '@shared/service/cart.service';
 
@@ -16,7 +16,8 @@ export class ProductViewComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private feedService: FeedService,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router,
   ) {
   	this.productId = activatedRoute.snapshot.params['id'];
   	this.getProduct();
@@ -42,6 +43,10 @@ export class ProductViewComponent implements OnInit {
       qty: 1
     };
     this.cartService.addItem(item);
+
+    if (isBuyNow) {
+      this.router.navigate(['/cart']);
+    }
   }
 
 }
