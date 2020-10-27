@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import FeedService from '@shared/service/feed.service';
+import CartService from '@shared/service/cart.service';
 
 @Component({
   selector: 'app-product-view',
@@ -12,7 +13,11 @@ export class ProductViewComponent implements OnInit {
 	private productId: string;
 	public product: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private feedService: FeedService) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private feedService: FeedService,
+    private cartService: CartService
+  ) {
   	this.productId = activatedRoute.snapshot.params['id'];
   	this.getProduct();
   }
@@ -29,7 +34,13 @@ export class ProductViewComponent implements OnInit {
   }
 
   addToCart(isBuyNow: boolean = false): void {
-    
+    const item = {
+      product: this.product._id,
+      merchant: this.product.merchant,
+      price: this.product.price,
+      qty: 1
+    };
+    this.cartService.addItem(item);
   }
 
 }
