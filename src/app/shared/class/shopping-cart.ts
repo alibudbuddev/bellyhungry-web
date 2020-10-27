@@ -17,7 +17,10 @@ export default class ShoppingCart {
 		if (items.length > 0) {
 			this.calculate(items);
 		} else {
-			// console.log(localStorage.getItem('cartItems'));
+			let cartHistory = localStorage.getItem('cartHistory');
+			if (cartHistory) {
+				this.calculate(JSON.parse(cartHistory).items);
+			}
 		}
 	}
 

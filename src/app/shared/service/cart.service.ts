@@ -22,7 +22,7 @@ export default class CartService {
 	}
 
 	updatView(): void {
-		localStorage.setItem('cart', JSON.stringify(this.cart));
+		localStorage.setItem('cartHistory', JSON.stringify(this.cart));
 		this.cartChangeSource.next(this.cart);
 	}
 }
