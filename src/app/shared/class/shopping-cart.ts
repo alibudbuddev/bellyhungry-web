@@ -36,7 +36,13 @@ export default class ShoppingCart {
 		} else {
 			let cartHistory = localStorage.getItem('cartHistory');
 			if (cartHistory) {
-				this.calculate(JSON.parse(cartHistory).items);
+				let cartData = JSON.parse(cartHistory);
+				if (cartData.customerDeliveryDetails) {
+					this.updateCustomerDeliveryDetails(cartData.customerDeliveryDetails);
+				}
+				if (cartData.items) {
+					this.calculate(cartData.items);
+				}
 			}
 		}
 	}
