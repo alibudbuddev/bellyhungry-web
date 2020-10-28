@@ -15,7 +15,7 @@ const childRoutes: Routes = [
     component: CheckoutSummaryComponent
   },
   {
-    path: ':id',
+    path: 'track/:id',
     component: OrderTrackComponent
   }
 ];
