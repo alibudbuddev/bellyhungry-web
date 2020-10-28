@@ -22,6 +22,14 @@ const routes: Routes = [
   {
     path: 'order',
     loadChildren: './modules/checkout/checkout.module#CheckoutModule'
+  },
+  {
+    path: 'merchant',
+    loadChildren: './modules/merchant/merchant.module#MerchantModule'
+  },
+  {
+    path: '**',
+    redirectTo: '/'
   }
 ];
 
