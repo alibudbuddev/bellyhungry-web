@@ -46,7 +46,7 @@ export class CheckoutSummaryComponent implements OnInit {
       .subscribe(res => {
         this.cartService.init();
         this.cartService.updatView();
-        this.router.navigate(['/order', res._id]);
+        this.router.navigate(['/order', res._id], {queryParams: {succcess: 1}});
       });
   }
 
