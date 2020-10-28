@@ -10,10 +10,10 @@ import { CustomerDeliveryDetails } from '@shared/class/shopping-cart';
 export class CheckoutSummaryComponent implements OnInit {
 	public items: any[] = [];
   public customerDeliveryDetails: CustomerDeliveryDetails;
+  public isLoading: boolean;
 
   constructor(private cartService: CartService) {
     this.customerDeliveryDetails = cartService.cart.getCustomerDeliveryDetails();
-    console.log(this.customerDeliveryDetails);
   	this.items = cartService.cart.getItems();
   }
 
@@ -25,7 +25,7 @@ export class CheckoutSummaryComponent implements OnInit {
   }
 
   placeOrder(): void {
-  	
+  	this.isLoading = true;
   }
 
 }

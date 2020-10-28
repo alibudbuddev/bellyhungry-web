@@ -18,7 +18,12 @@
           <dt>Total:</dt>
           <dd class="text-right h5"><strong>{{ cartService.cart.totalPrice | currency:'PHP' }}</strong></dd>
         </dl>
-        <button class="btn btn-success btn-block" (click)="placeOrder()">Place Order</button>
+        <div class="d-block text-center">
+          <div *ngIf="isLoading" class="spinner-border text-success" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <button *ngIf="!isLoading" class="btn btn-success btn-block" (click)="placeOrder()">Place Order</button>
+        </div> 
       </div>
     </div>
   </div>
