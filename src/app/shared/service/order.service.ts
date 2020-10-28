@@ -24,4 +24,8 @@ export class OrderService {
     return this.httpClient.get<any>(`${this.endpoint}/${id}`);
   }
 
+  merchantOrders():Observable<any> {
+    return this.httpClient.get<any>(`${this.endpoint}/merchant`);
+  }
+
 }
