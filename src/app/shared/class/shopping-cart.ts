@@ -28,7 +28,7 @@ export default class ShoppingCart {
 	private items: ItemInterface[] = [];
 	private totalPrice: number = 0;
 	private totalItems: number = 0;
-	private deliveryDetails: DeliveryDetailsInterface = new DeliveryDetails();
+	private deliveryDetails: DeliveryDetails = new DeliveryDetails();
 
 	constructor(items: any[] = []) {
 		if (items.length > 0) {
