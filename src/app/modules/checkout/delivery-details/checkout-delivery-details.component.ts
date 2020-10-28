@@ -32,6 +32,10 @@ export class CheckoutDeliveryDetailsComponent {
   }
 
   prepareFields(): void {
+    for (const field in this.form.controls) {
+      this.form.get(field).markAsDirty();
+    }
+    
   	if (this.form.valid) {
   		this.submit();
   	}
