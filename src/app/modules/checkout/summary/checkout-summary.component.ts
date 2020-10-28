@@ -14,8 +14,10 @@ export class CheckoutSummaryComponent implements OnInit {
 	public items: any[] = [];
   public customerDeliveryDetails: CustomerDeliveryDetails;
   public isLoading: boolean;
+  public cart: any;
 
   constructor(private cartService: CartService, private orderService: OrderService, private router: Router) {
+    this.cart = cartService.cart;
     this.customerDeliveryDetails = cartService.cart.getCustomerDeliveryDetails();
   	this.items = cartService.cart.getItems();
   }

@@ -9,9 +9,11 @@ import CartService from '@shared/service/cart.service';
 })
 export class CartComponent implements OnInit, OnDestroy {
 	public items: any[] = [];
+  public cart: any;
 	private cartSubscription: Subscription;
 
   constructor(private cartService: CartService) {
+    this.cart = cartService.cart;
   	this.items = this.cartService.cart.getItems();
   }
 

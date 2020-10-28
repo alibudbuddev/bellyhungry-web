@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import CartService from '@shared/service/cart.service';
@@ -9,19 +9,18 @@ import { CustomerDeliveryDetails } from '@shared/class/shopping-cart';
   templateUrl: './checkout-delivery-details.component.html',
   styleUrls: ['./checkout-delivery-details.component.less']
 })
-export class CheckoutDeliveryDetailsComponent implements OnInit {
+export class CheckoutDeliveryDetailsComponent {
 	public form: FormGroup;
+  public cart: any;
 
   constructor(
   	private cartService: CartService,
   	private fb: FormBuilder,
   	private router: Router
  	) {
+    this.cart = cartService.cart;
   	this.initiateForm();
  	}
-
-  ngOnInit() {
-  }
 
   initiateForm(): void {
   	const storedData = this.cartService.cart.getCustomerDeliveryDetails();
