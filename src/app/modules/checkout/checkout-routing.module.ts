@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CheckoutComponent } from './checkout.component';
 import { CheckoutDeliveryDetailsComponent } from './delivery-details/checkout-delivery-details.component';
 import { CheckoutSummaryComponent } from './summary/checkout-summary.component';
+import { OrderTrackComponent } from './track/order-track.component';
 
 const childRoutes: Routes = [
 	{
@@ -12,6 +13,10 @@ const childRoutes: Routes = [
   {
     path: 'summary',
     component: CheckoutSummaryComponent
+  },
+  {
+    path: ':id',
+    component: OrderTrackComponent
   }
 ];
 

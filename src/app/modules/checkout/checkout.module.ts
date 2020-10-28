@@ -6,9 +6,10 @@ import { CheckoutRoutingModule } from './checkout-routing.module';
 import { CheckoutComponent } from './checkout.component';
 import { CheckoutDeliveryDetailsComponent } from './delivery-details/checkout-delivery-details.component';
 import { CheckoutSummaryComponent } from './summary/checkout-summary.component';
+import { OrderTrackComponent } from './track/order-track.component';
 
 @NgModule({
-  declarations: [CheckoutComponent, CheckoutDeliveryDetailsComponent, CheckoutSummaryComponent],
+  declarations: [CheckoutComponent, CheckoutDeliveryDetailsComponent, CheckoutSummaryComponent, OrderTrackComponent],
   imports: [
     CommonModule,
     CheckoutRoutingModule,
