@@ -40,7 +40,7 @@ export class CheckoutDeliveryDetailsComponent implements OnInit {
 
   submit(): void {
   	this.cartService.updateDeliveryDetails(this.form.value);
-  	this.router.navigate(['/checkout/summary']);
+  	this.router.navigate(['/order/summary']);
   }
 
 }

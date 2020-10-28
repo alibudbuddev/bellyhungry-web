@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: './modules/cart/cart.module#CartModule'
   },
   {
-    path: 'checkout',
+    path: 'order',
     loadChildren: './modules/checkout/checkout.module#CheckoutModule'
   }
 ];

@@ -6,7 +6,7 @@ import { CheckoutSummaryComponent } from './summary/checkout-summary.component';
 
 const childRoutes: Routes = [
 	{
-    path: '',
+    path: 'checkout',
     component: CheckoutDeliveryDetailsComponent
   },
   {
