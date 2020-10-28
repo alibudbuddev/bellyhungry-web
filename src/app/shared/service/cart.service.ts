@@ -16,6 +16,11 @@ export default class CartService {
   	this.cart = new ShoppingCart();
   }
 
+  resetCart(): void {
+  	this.cart.reset();
+  	this.updatView()
+  }
+
   addItem(item: any): void {
 		this.cart.addItem(item);
 		this.updatView();

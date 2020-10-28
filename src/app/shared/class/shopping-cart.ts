@@ -47,6 +47,11 @@ export default class ShoppingCart {
 		}
 	}
 
+	reset(): void {
+		this.customerDeliveryDetails = new CustomerDeliveryDetails();
+		this.calculate([]);
+	}
+
 	getItems(): any[] {
 		return this.items;
 	}
