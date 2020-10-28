@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observer, Subject } from 'rxjs';
-import ShoppingCart from '@shared/class/shopping-cart';
+import ShoppingCart, { CustomerDeliveryDetails } from '@shared/class/shopping-cart';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +28,11 @@ export default class CartService {
 
 	updateItem(item: any): void {
 		this.cart.updateItem(item);
+		this.updatView();
+	}
+
+	updateDeliveryDetails(details: CustomerDeliveryDetails): void {
+		this.cart.updateCustomerDeliveryDetails(details);
 		this.updatView();
 	}
 

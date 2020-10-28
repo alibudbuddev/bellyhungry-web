@@ -9,7 +9,7 @@ export interface ItemInterface {
 	qty: number;
 }
 
-export class DeliveryDetails {
+export class CustomerDeliveryDetails {
 	name: string;
   shippingAddress: string;
   contactNo: string;
@@ -28,7 +28,7 @@ export default class ShoppingCart {
 	private items: ItemInterface[] = [];
 	private totalPrice: number = 0;
 	private totalItems: number = 0;
-	private deliveryDetails: DeliveryDetails = new DeliveryDetails();
+	private customerDeliveryDetails: CustomerDeliveryDetails = new CustomerDeliveryDetails();
 
 	constructor(items: any[] = []) {
 		if (items.length > 0) {
@@ -45,12 +45,20 @@ export default class ShoppingCart {
 		return this.items;
 	}
 
+	getCustomerDeliveryDetails(): CustomerDeliveryDetails {
+		return this.customerDeliveryDetails;
+	}
+
 	updateItem(item: ItemInterface): void {
 		const currentItemIndex: any = findIndex(this.items, {product: item.product});
 		if (currentItemIndex >= 0) {
 			this.items[currentItemIndex] = item;
 			this.calculate(this.items);
 		}
+	}
+
+	updateCustomerDeliveryDetails(details: CustomerDeliveryDetails): void {
+		this.customerDeliveryDetails = details;
 	}
 
 	addItem(item: ItemInterface): void {

@@ -23,28 +23,28 @@
   </div>
   <div class="col-md-8 order-md-1">
     <h4 class="mb-3 text-muted">Delivery Details</h4>
-    <form class="needs-validation">
+    <form class="needs-validation" [formGroup]="form" (submit)="prepareFields()">
       <div class="mb-3">
 	      <label for="name">Name</label>
-	      <input type="text" class="form-control" id="name" placeholder="" value="">
+	      <input type="text" class="form-control" id="name" formControlName="name">
 	      <div class="invalid-feedback">
 	        Valid first name is required.
 	      </div>
 	    </div>
 
       <div class="mb-3">
-        <label for="address">Address</label>
-        <input type="text" class="form-control" id="address">
-        <div class="invalid-feedback">
-          Please enter your shipping address.
+        <label for="shippingAddress">Delivery Address</label>
+        <input type="text" class="form-control" id="shippingAddress" formControlName="shippingAddress">
+        <div *ngIf="form.get('shippingAddress').invalid && form.get('shippingAddress').dirty" class="invalid-feedback">
+          Please enter your Delivery Address.
         </div>
       </div>
 
       <div class="mb-3">
-        <label for="contact">Contact No.</label>
-        <input type="text" class="form-control" id="contact">
-        <div class="invalid-feedback">
-          Please enter your shipping address.
+        <label for="contactNo">Contact No.</label>
+        <input type="text" class="form-control" id="contactNo" formControlName="contactNo">
+        <div *ngIf="form.get('contactNo').invalid && form.get('contactNo').dirty" class="invalid-feedback">
+          Please enter your Contact Nnumber.
         </div>
       </div>
       <button class="btn btn-primary btn-lg btn-block" type="submit">Save Delivery Details</button>
