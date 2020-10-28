@@ -20,4 +20,8 @@ export class OrderService {
     return this.httpClient.post<any>(`${this.endpoint}`, order);
   }
 
+  get(id: string):Observable<any> {
+    return this.httpClient.get<any>(`${this.endpoint}/${id}`);
+  }
+
 }
