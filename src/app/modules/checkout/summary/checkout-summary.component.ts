@@ -49,7 +49,7 @@ export class CheckoutSummaryComponent implements OnInit {
     this.orderService.create(order)
       .subscribe(res => {
         this.cartService.resetCart();
-        this.router.navigate(['/order/track', res._id], {queryParams: {succcess: 1}});
+        this.router.navigate(['/order/track', res._id], {queryParams: {success: 1}});
       }, err => {
         this.isLoading = false;
         this.httpError = err.error.message;
