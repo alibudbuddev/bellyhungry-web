@@ -10,7 +10,7 @@ const childRoute: Routes = [
     component: MerchantOrdersComponent
   },
   {
-    path: 'order/:id',
+    path: 'orders/:id',
     component: MerchantOrderViewComponent
   },
   {

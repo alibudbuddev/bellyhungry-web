@@ -1,1 +1,18 @@
-<p>merchant-orders works!</p>
+<div class="py-3">
+  <h2>Orders</h2>
+</div>
+
+<ul class="list-group mb-3">
+  <ng-container *ngFor="let item of orders; trackBy: trackById">
+    <li class="list-group-item">
+      <div class="d-flex justify-content-between lh-condensed align-items-center mr-3">
+        <div>
+          <h6 class="my-0">{{ item.order.customerDetails.name }}</h6>
+          <small class="text-muted">{{ item.order.customerDetails.contactNo }}</small>
+        </div>
+        <span class="text-muted">{{ item.order.totalPrice | currency:'PHP' }}</span>
+      </div>
+      <a [routerLink]="['/merchant/orders', item.order._id]" class="btn btn-primary">View Order</a>
+    </li>
+  </ng-container>
+</ul>

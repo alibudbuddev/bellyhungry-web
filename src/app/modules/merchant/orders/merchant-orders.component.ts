@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MerchantService } from './../merchant.service';
+import { trackById } from '@shared/util/helpers';
 
 @Component({
   selector: 'app-merchant-orders',
@@ -8,6 +9,8 @@ import { MerchantService } from './../merchant.service';
   providers: [MerchantService]
 })
 export class MerchantOrdersComponent implements OnInit {
+  public trackById = trackById;
+  public orders: any[] = [];
 
   constructor(
   	private merchantService: MerchantService,
@@ -15,10 +18,14 @@ export class MerchantOrdersComponent implements OnInit {
  	}
 
   ngOnInit() {
-  	this.merchantService.orders()
-  		.subscribe(res => {
-  			console.log(res);
-  		});
+  	this.getOrders();
+  }
+
+  getOrders(): void {
+    this.merchantService.orders()
+      .subscribe(orders => {
+        this.orders = orders;
+      });
   }
 
 }
