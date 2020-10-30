@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from '@shared/service/order.service';
+import { MerchantService } from './../merchant.service';
 
 @Component({
   selector: 'app-merchant-orders',
   templateUrl: './merchant-orders.component.html',
   styleUrls: ['./merchant-orders.component.less'],
-  providers: [OrderService]
+  providers: [MerchantService]
 })
 export class MerchantOrdersComponent implements OnInit {
 
   constructor(
-  	private orderService: OrderService,
+  	private merchantService: MerchantService,
  	) {
  	}
 
   ngOnInit() {
-  	this.orderService.merchantOrders()
+  	this.merchantService.orders()
   		.subscribe(res => {
   			console.log(res);
   		});
