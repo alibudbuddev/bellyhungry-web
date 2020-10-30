@@ -32,8 +32,8 @@ export class AppInitializer {
   private checUserIfAuthenticated(callback: () => void) {
     this.httpClient.get<any>(`${this.apiUrl}/auth/jwt/me`)  
       .subscribe(
-        user => {
-          this.authService.user = user;
+        response => {
+          this.authService.user = response.user;
           callback();
         },
         error => {
