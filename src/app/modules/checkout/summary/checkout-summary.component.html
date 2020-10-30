@@ -24,6 +24,7 @@
           </div>
 
           <ng-container *ngIf="cart.totalPrice > 0">
+            <span *ngIf="httpError">{{ httpError }}</span>
             <button *ngIf="!isLoading" class="btn btn-success btn-block" (click)="placeOrder()">Place Order</button>
           </ng-container>
         </div> 

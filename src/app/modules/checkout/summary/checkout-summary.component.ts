@@ -15,6 +15,7 @@ export class CheckoutSummaryComponent implements OnInit {
   public customerDeliveryDetails: CustomerDeliveryDetails;
   public isLoading: boolean;
   public cart: any;
+  public httpError: string;
 
   constructor(private cartService: CartService, private orderService: OrderService, private router: Router) {
     this.cart = cartService.cart;
@@ -31,6 +32,7 @@ export class CheckoutSummaryComponent implements OnInit {
 
   placeOrder(): void {
   	this.isLoading = true;
+    this.httpError = undefined;
     const items = this.cartService.cart
     const order = {
       customerDetails: this.customerDeliveryDetails,
@@ -48,6 +50,9 @@ export class CheckoutSummaryComponent implements OnInit {
       .subscribe(res => {
         this.cartService.resetCart();
         this.router.navigate(['/order/track', res._id], {queryParams: {succcess: 1}});
+      }, err => {
+        this.isLoading = false;
+        this.httpError = err.error.message;
       });
   }
 
