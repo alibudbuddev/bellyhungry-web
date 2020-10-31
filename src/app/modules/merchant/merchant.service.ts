@@ -15,4 +15,8 @@ export class MerchantService {
     return this.httpClient.get<any>(`${this.endpoint}/orders`);
   }
 
+  order(orderId: string):Observable<any> {
+    return this.httpClient.get<any>(`${this.endpoint}/orders/${orderId}`);
+  }
+
 }
