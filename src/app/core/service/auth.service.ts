@@ -9,7 +9,7 @@ import { environment } from '@environment/environment'
 })
 export class AuthService {
 	private endpoint = `${environment.apiUrl}/auth`;
-	public user: undefined | object | boolean;
+	public user: any;
   
   constructor(private httpClient: HttpClient) { }
 
