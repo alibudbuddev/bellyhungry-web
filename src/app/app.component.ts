@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '@shared/class/user.class';
+import { Router } from '@angular/router';
 import { AuthService } from '@core/service/auth.service';
 import CartService from '@shared/service/cart.service';
 
@@ -10,7 +11,17 @@ import CartService from '@shared/service/cart.service';
 })
 export class AppComponent implements OnInit {
   
-  constructor(private authService: AuthService, public cartService: CartService) { }
+  constructor(
+  	private authService: AuthService,
+  	private router: Router,
+  	public cartService: CartService
+  ) { }
 
   ngOnInit() {}
+
+  onLogoutClick(): void {
+  	localStorage.removeItem('access_token');
+  	this.authService.user = undefined;
+  	this.router.navigate(['/products']);
+  }
 }

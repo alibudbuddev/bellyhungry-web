@@ -12,19 +12,14 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/products">Products</a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="authService.user" class="nav-item">
         <a class="nav-link" routerLink="/merchant/orders">Store</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/cart">Cart <span class="badge badge-success">{{ cartService.cart.totalItems }}</span></a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+      <li *ngIf="authService.user" class="nav-item">
+        <button class="nav-link btn-logout" type="button" (click)="onLogoutClick()">Logout</button>
       </li>
     </ul>
     <div *ngIf="authService.user" class="user-details">
