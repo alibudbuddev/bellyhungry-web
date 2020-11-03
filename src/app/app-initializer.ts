@@ -8,8 +8,8 @@ import CartService from '@shared/service/cart.service';
   providedIn: 'root',
 })
 export class AppInitializer {
-  // private apiUrl: string = 'https://food-trade-api.herokuapp.com';
-  private apiUrl: string = 'http://localhost:3000';
+  private apiUrl: string = 'https://food-trade-api.herokuapp.com';
+  // private apiUrl: string = 'http://localhost:3000';
 
   constructor(
     private httpClient: HttpClient,

@@ -12,16 +12,16 @@ import CartService from '@shared/service/cart.service';
 export class AppComponent implements OnInit {
   
   constructor(
-  	private authService: AuthService,
-  	private router: Router,
-  	public cartService: CartService
+  	// private authService: AuthService,
+  	// private router: Router,
+  	// public cartService: CartService
   ) { }
 
   ngOnInit() {}
 
   onLogoutClick(): void {
-  	localStorage.removeItem('access_token');
-  	this.authService.user = undefined;
-  	this.router.navigate(['/products']);
+  	// localStorage.removeItem('access_token');
+  	// this.authService.user = undefined;
+  	// this.router.navigate(['/products']);
   }
 }
