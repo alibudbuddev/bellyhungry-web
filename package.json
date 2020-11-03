@@ -11,6 +11,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.13.4"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
@@ -21,6 +25,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "express": "^4.17.1",
     "lodash": "^4.17.20",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
