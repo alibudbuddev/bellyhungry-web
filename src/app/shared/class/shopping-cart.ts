@@ -94,6 +94,14 @@ export default class ShoppingCart {
 		this.calculate(this.items);
 	}
 
+	getTotalPrice(): number {
+		return this.totalPrice;
+	}
+
+	getTotalItems(): number {
+		return this.totalItems;
+	}
+
 	private calculate(items: any[] = []): any {
 		this.items = items.map(item => {
 			item = this.calculateItemTotalPrice(item);

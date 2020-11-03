@@ -12,9 +12,9 @@ import CartService from '@shared/service/cart.service';
 export class AppComponent implements OnInit {
   
   constructor(
-  	private authService: AuthService,
-  	private router: Router,
-  	public cartService: CartService
+    private router: Router,
+    public authService: AuthService,
+    public cartService: CartService
   ) { }
 
   ngOnInit() {}

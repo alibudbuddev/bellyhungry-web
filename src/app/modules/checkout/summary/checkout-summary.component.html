@@ -8,7 +8,7 @@
       <div class="card-body">
         <dl class="d-flex justify-content-between">
           <dt>Total price:</dt>
-          <dd class="text-right">{{ cartService.cart.totalPrice | currency:'PHP' }}</dd>
+          <dd class="text-right">{{ cartService.cart.getTotalPrice() | currency:'PHP' }}</dd>
         </dl>
         <dl class="d-flex justify-content-between">
           <dt>Discount:</dt>
@@ -16,7 +16,7 @@
         </dl>
         <dl class="d-flex justify-content-between">
           <dt>Total:</dt>
-          <dd class="text-right h5"><strong>{{ cartService.cart.totalPrice | currency:'PHP' }}</strong></dd>
+          <dd class="text-right h5"><strong>{{ cartService.cart.getTotalPrice() | currency:'PHP' }}</strong></dd>
         </dl>
         <div class="d-block text-center">
           <div *ngIf="isLoading" class="spinner-border text-success" role="status">

@@ -5,33 +5,27 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 const routes: Routes = [
 	{
     path: '',
-    loadChildren: './modules/home/home.module#HomeModule'
-    // loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'auth',
-    loadChildren: './modules/auth/auth.module#AuthModule',
-    // loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: 'products',
-    loadChildren: './modules/product/product.module#ProductModule',
-    // loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule)
   },
   {
     path: 'cart',
-    loadChildren: './modules/cart/cart.module#CartModule',
-    // loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./modules/cart/cart.module').then(m => m.CartModule)
   },
   {
     path: 'order',
-    loadChildren: './modules/checkout/checkout.module#CheckoutModule',
-    // loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./modules/checkout/checkout.module').then(m => m.CheckoutModule)
   },
   {
     path: 'merchant',
-    loadChildren: './modules/merchant/merchant.module#MerchantModule',
-    // loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./modules/merchant/merchant.module').then(m => m.MerchantModule)
   },
   {
     path: '**',
