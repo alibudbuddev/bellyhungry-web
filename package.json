@@ -2,6 +2,8 @@
   "name": "angular",
   "version": "0.0.0",
   "scripts": {
+    "preinstall": "npm install -g @angular/cli@8.3.29",
+    "postinstall": "ng build --prod",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
