@@ -22,9 +22,10 @@ export class AppInitializer {
   init(): () => Promise<boolean> {
     return () => {
       return new Promise<boolean>((resolve, reject) => {
-          this.checUserIfAuthenticated(() => {
-            resolve();
-          });
+          // this.checUserIfAuthenticated(() => {
+          //   resolve();
+          // });
+          resolve();
       });
     };
   }
