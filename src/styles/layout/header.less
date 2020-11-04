@@ -1,10 +1,22 @@
-nav {
-  background: white;
-  .container {
-    .navbar-brand {
-      color: @primary-color;
-      font-weight: bold;
-      font-size: @font-size-28;
-    }
-  }
+app-header {
+	nav {
+	  background: @primary-color;
+    padding: .25rem 1rem !important;
+	  .container {
+	    .navbar-brand {
+	      color: white;
+	      font-weight: @font-weight-extrabold;
+	      font-size: @font-size-28;
+	    }
+	    .navbar-collapse {
+	    	.navbar-nav {
+	    		.nav-item {
+	    			.nav-link {
+	    				color: white;
+	    			}
+	    		}
+	    	}
+	    }
+	  }
+	}
 }
