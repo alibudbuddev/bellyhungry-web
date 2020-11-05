@@ -1,0 +1,38 @@
+@import "./../../../../../styles/variables";
+@import "./../../../../../styles/mixins/position";
+
+.main {
+  position: relative;
+  background: rgba(@primary-color, 10%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .banner-bg {
+    .position(absolute, @top: 0, @right: 0, @bottom: 0, @left: 0);
+    overflow: hidden;
+    ::ng-deep app-img-element {
+      position: absolute;
+      &.img-1 {
+        .position(absolute, @bottom: 0, @left: 0);
+        img {
+          width: 220px;
+        }
+      }
+      &.img-2 {
+        .position(absolute, @top: -75, @right: 0);
+      }
+    }
+  }
+
+  .banner-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .banner-heading {
+      font-size: 3rem;
+      z-index: 5;
+    }
+  }
+}
