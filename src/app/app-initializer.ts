@@ -9,7 +9,7 @@ import CartService from '@shared/service/cart.service';
 })
 export class AppInitializer {
   // private apiUrl: string = 'https://food-trade-api.herokuapp.com';
-  private apiUrl: string = 'http://localhost:3000';
+  // private apiUrl: string = 'http://localhost:3000';
 
   constructor(
     private httpClient: HttpClient,
@@ -22,24 +22,24 @@ export class AppInitializer {
   init(): () => Promise<boolean> {
     return () => {
       return new Promise<boolean>((resolve, reject) => {
-        this.checUserIfAuthenticated(() => {
+        // this.checUserIfAuthenticated(() => {
           resolve();
-        });
+        // });
       });
     };
   }
 
-  private checUserIfAuthenticated(callback: () => void) {
-    this.httpClient.get<any>(`${this.apiUrl}/auth/jwt/me`)  
-      .subscribe(
-        response => {
-          this.authService.user = response.user;
-          callback();
-        },
-        error => {
-          this.authService.user = false;
-          callback();
-        }
-      );
-  }
+  // private checUserIfAuthenticated(callback: () => void) {
+  //   this.httpClient.get<any>(`${this.apiUrl}/auth/jwt/me`)  
+  //     .subscribe(
+  //       response => {
+  //         this.authService.user = response.user;
+  //         callback();
+  //       },
+  //       error => {
+  //         this.authService.user = false;
+  //         callback();
+  //       }
+  //     );
+  // }
 }
