@@ -23,6 +23,38 @@
         .position(absolute, @top: -75, @right: 0);
       }
     }
+
+    @media @mobile-screen,
+    @mobile-lanscape-screen {
+      ::ng-deep app-img-element {
+        &.img-1 {
+          img {
+            width: 150px;
+          }
+        }
+        &.img-2 {
+          img {
+            width: 200px;
+          }
+        }
+      }
+    }
+
+    @media @mobile-xs-small-screen,
+    @mobile-lanscape-screen {
+      ::ng-deep app-img-element {
+        &.img-1 {
+          img {
+            width: 110px;
+          }
+        }
+        &.img-2 {
+          img {
+            width: 145px;
+          }
+        }
+      }
+    }
   }
 
   .banner-content {
@@ -33,6 +65,12 @@
     .banner-heading {
       font-size: 3rem;
       z-index: 5;
+
+      @media @mobile-screen,
+      @mobile-xs-small-screen,
+      @mobile-lanscape-screen {
+        font-size: 2rem;
+      }
     }
   }
 }
