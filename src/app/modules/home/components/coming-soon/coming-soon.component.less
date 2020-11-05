@@ -62,15 +62,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .banner-heading {
-      font-size: 3rem;
-      z-index: 5;
-
-      @media @mobile-screen,
-      @mobile-xs-small-screen,
-      @mobile-lanscape-screen {
-        font-size: 2rem;
+    ::ng-deep app-img-element {
+      img {
+        width: 100%;
       }
+    }
+    .banner-heading {
+      font-size: 22px;
     }
   }
 }
