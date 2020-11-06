@@ -8,8 +8,7 @@ import CartService from '@shared/service/cart.service';
   providedIn: 'root',
 })
 export class AppInitializer {
-  // private apiUrl: string = 'https://food-trade-api.herokuapp.com';
-  private apiUrl: string = 'http://localhost:3000';
+  private apiUrl: string;
 
   constructor(
     private httpClient: HttpClient,
@@ -22,11 +21,26 @@ export class AppInitializer {
   init(): () => Promise<boolean> {
     return () => {
       return new Promise<boolean>((resolve, reject) => {
-        this.checUserIfAuthenticated(() => {
-          resolve();
+        this.getConfig(() => {
+          this.checUserIfAuthenticated(() => {
+            resolve();
+          });
         });
       });
     };
+  }
+
+  private getConfig(callback: () => void) {
+    this.httpClient.get<any>('/client-server/environments')  
+      .subscribe(
+        response => {
+          this.apiUrl = response.API_URL;
+          callback();
+        },
+        error => {
+          callback();
+        }
+      );
   }
 
   private checUserIfAuthenticated(callback: () => void) {

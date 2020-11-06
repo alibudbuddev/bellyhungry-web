@@ -1,5 +1,0 @@
-deploy:
-  stage: deploy
-  script:
-  - gem install dpl
-  - dpl --provider=heroku --app=food-trade-web --api-key=$HEROKU_API_KEY
