@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '@core/service/auth.service';
+import { AppService } from '@core/service/app.service';
 import ShoppingCart from '@shared/class/shopping-cart';
 import CartService from '@shared/service/cart.service';
 
@@ -11,9 +12,10 @@ export class AppInitializer {
   private apiUrl: string;
 
   constructor(
-    private httpClient: HttpClient,
+    private appService: AppService,
     private authService: AuthService,
-    private cartService: CartService
+    private cartService: CartService,
+    private httpClient: HttpClient
   ) {
     cartService.init();
   }
@@ -35,6 +37,8 @@ export class AppInitializer {
       .subscribe(
         response => {
           this.apiUrl = response.API_URL;
+          this.appService.apiUrl = this.apiUrl;
+          this.authService.endpoint = this.apiUrl;
           callback();
         },
         error => {
