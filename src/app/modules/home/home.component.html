@@ -19,9 +19,9 @@
 
 <div class="container">
 	<div class="row">
-		<ng-container	*ngFor="let item of categories; trackBy: trackByIndex;">
+		<ng-container	*ngFor="let item of categoryList; trackBy: trackByIndex;">
 			<div class="col-lg-4 col-md-6 mb-4">
-				<app-home-category-list></app-home-category-list>
+				<app-home-category-list [title]="item.display"></app-home-category-list>
 			</div>
 		</ng-container>
 	</div>

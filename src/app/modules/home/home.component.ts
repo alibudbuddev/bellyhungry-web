@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trackByIndex } from '@shared/util/helpers';
+import { categoryList } from '@core/metadata';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { trackByIndex } from '@shared/util/helpers';
 export class HomeComponent implements OnInit {
 
 	public trackByIndex = trackByIndex;
-	public categories = [1,1,1,1,1,1,1,1,1];
+	public categoryList = categoryList;
 
   constructor() { }
 

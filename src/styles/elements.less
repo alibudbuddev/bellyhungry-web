@@ -4,16 +4,20 @@ html {
   font-size: @font-size-16 !important;
 }
 
-body {
+body,
+a {
   color: @color-grey;
 }
 
 h1,h2,h3,h4,h5,h6 {
-	font-weight: @font-weight-bold !important;
+	font-weight: @font-weight-bold;
 }
 
 a {
   text-decoration: none;
+  &:hover {
+    color: @primary-color;
+  }
 }
 
 #page-loader {
