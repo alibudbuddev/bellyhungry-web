@@ -8,6 +8,12 @@ export class AppComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.removePageLoadMask();
+
+		const FB = window['FB'];
+		FB.getLoginStatus(function(response) {
+			console.log(response);
+	    // statusChangeCallback(response);
+		});
 	}
 
 	removePageLoadMask(): void {
