@@ -12,6 +12,6 @@ export class AppComponent implements OnInit {
 
 	removePageLoadMask(): void {
     const el = document.getElementById('page-loader');
-    el.style.opacity = '0';
+    el.style.display = 'none';
   }
 }
