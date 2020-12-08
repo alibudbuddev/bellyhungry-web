@@ -5,6 +5,7 @@
     "preinstall": "npm install -g @angular/cli@9.1.12",
     "postinstall": "ng build --prod",
     "start": "node app.js",
+    "build": "ng build --watch",
     "test": "ng test",
     "lint": "ng lint"
   },
